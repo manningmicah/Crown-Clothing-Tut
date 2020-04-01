@@ -1,23 +1,35 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import { auth } from '../../data/firebase/firebase.utils';
+
 import { ReactComponent as Logo } from '../../assets/crownLogo.svg';
 
 import './header.styles.scss';
 
-const Header = () => (
-	<div className="header">
-		<Link className="logo-container" to="/">
-			<Logo className="logo" />
+// TODO: Don't for get that you changed the signout from a div to a Link.
+const Header = ({ currentUser }) => (
+	<div className='header'>
+		<Link className='logo-container' to='/'>
+			<Logo className='logo' />
 		</Link>
-		<div className="options">
-			<Link className="option" to="/shop">
+		<nav className='options'>
+			<Link className='option' to='/shop'>
 				SHOP
 			</Link>
-			<Link className="option" to="/contact">
+			<Link className='option' to='/contact'>
 				CONTACT
 			</Link>
-		</div>
+			{currentUser ? (
+				<Link className='option' onClick={() => auth.signOut()}>
+					SIGN OUT
+				</Link>
+			) : (
+				<Link className='option' to='/signin'>
+					SIGN IN
+				</Link>
+			)}
+		</nav>
 	</div>
 );
 
