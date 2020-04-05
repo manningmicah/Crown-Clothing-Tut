@@ -21,19 +21,12 @@ body {
 a {
 	text-decoration: none;
 	color: black;
-
-	// &:focus,
-	// &:hover,
-	// &:active {
-	// 	color: $visualFocusColor;
-	// 	background-color: $visualFocusBackGround;
-	// }
-
 	@include visualFocus();
 }
 
 input,
-button {
+button,
+.link {
 	@include visualFocus();
 }
 

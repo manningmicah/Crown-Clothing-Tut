@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-
 import { auth } from '../../data/firebase/firebase.utils';
+
+import CartIcon from '../cart/cart-icon/cart-icon.component';
 
 import { ReactComponent as Logo } from '../../assets/crownLogo.svg';
 
@@ -22,14 +23,15 @@ const Header = ({ currentUser }) => (
 				CONTACT
 			</Link>
 			{currentUser ? (
-				<Link className='option' to='#!' onClick={() => auth.signOut()}>
+				<div className='option link' to='#!' onClick={() => auth.signOut()}>
 					SIGN OUT
-				</Link>
+				</div>
 			) : (
 				<Link className='option' to='/signin'>
 					SIGN IN
 				</Link>
 			)}
+			<CartIcon />
 		</nav>
 	</div>
 );
