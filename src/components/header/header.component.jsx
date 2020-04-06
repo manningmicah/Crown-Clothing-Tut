@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { auth } from '../../data/firebase/firebase.utils';
+import { auth } from 'data/firebase/firebase.utils';
 
-import CartIcon from '../cart/cart-icon/cart-icon.component';
+import CartIcon from 'components/cart/cart-icon/cart-icon.component';
 
-import { ReactComponent as Logo } from '../../assets/crownLogo.svg';
+import { ReactComponent as Logo } from 'assets/crownLogo.svg';
 
 import './header.styles.scss';
 

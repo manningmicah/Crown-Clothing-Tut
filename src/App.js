@@ -4,12 +4,12 @@ import { connect } from 'react-redux';
 
 import './App.scss';
 
-import HomePage from './pages/homepage/homepage.component';
-import ShopPage from './pages/shop/shop.component';
-import Header from './components/header/header.component';
-import SignInAndRegPage from './pages/Signin-and-Reg/Signin-and-Reg.component';
-import { auth, createUserProfileDocument } from './data/firebase/firebase.utils';
-import { setCurrentUser } from './redux/actions/user.actions';
+import HomePage from 'pages/homepage/homepage.component';
+import ShopPage from 'pages/shop/shop.component';
+import Header from 'components/header/header.component';
+import SignInAndRegPage from 'pages/Signin-and-Reg/Signin-and-Reg.component';
+import { auth, createUserProfileDocument } from 'data/firebase/firebase.utils';
+import { setCurrentUser } from 'redux/actions/user.actions';
 
 class App extends React.Component {
 	unsubscribeFromAuth = null;

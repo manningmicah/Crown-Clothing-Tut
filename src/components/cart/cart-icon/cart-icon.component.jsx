@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ReactComponent as ShoppinIcon } from '../../../assets/shoppin-bag.svg';
+import { ReactComponent as ShoppinIcon } from 'assets/shopping-bag.svg';
 
 import './cart-icon.styles.scss';
 
