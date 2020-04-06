@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { auth } from 'data/firebase/firebase.utils';
+import CartPreview from 'components/cart/cart-preview/cart-preview.component';
 
 import CartIcon from 'components/cart/cart-icon/cart-icon.component';
 
@@ -10,7 +11,7 @@ import { ReactComponent as Logo } from 'assets/crownLogo.svg';
 import './header.styles.scss';
 
 // TODO: Don't for get that you changed the signout from a div to a Link.
-const Header = ({ currentUser }) => (
+const Header = ({ currentUser, hidden }) => (
 	<div className='header'>
 		<Link className='logo-container' to='/'>
 			<Logo className='logo' />
@@ -33,11 +34,13 @@ const Header = ({ currentUser }) => (
 			)}
 			<CartIcon />
 		</nav>
+		{hidden ? null : <CartPreview />}
 	</div>
 );
 
-const mapStateToProps = (state) => ({
-	currentUser : state.user.currentUser,
+const mapStateToProps = ({ user: { currentUser }, cart: { hidden } }) => ({
+	currentUser,
+	hidden,
 });
 
 export default connect(mapStateToProps)(Header);
