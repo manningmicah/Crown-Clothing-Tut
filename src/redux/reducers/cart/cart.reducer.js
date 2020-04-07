@@ -1,6 +1,6 @@
 import { TOGGLE_CART_HIDDEN } from 'redux/types/cart.types';
 
-const initialState = {};
+const initialState = { hidden: true };
 
 export default (state = initialState, { type }) => {
 	switch (type) {
