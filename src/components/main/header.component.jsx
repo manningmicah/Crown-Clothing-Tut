@@ -10,7 +10,6 @@ import { ReactComponent as Logo } from 'assets/crownLogo.svg';
 
 import './header.styles.scss';
 
-// TODO: Don't for get that you changed the signout from a div to a Link.
 const Header = ({ currentUser, hidden }) => (
 	<div className='header'>
 		<Link className='logo-container' to='/'>
