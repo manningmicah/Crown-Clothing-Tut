@@ -1,4 +1,4 @@
-import { SET_CURRENT_USER } from 'redux/types/user.types';
+import { SET_CURRENT_USER } from 'redux/user/user.types';
 
 const initialState = {
 	currentUser : null,

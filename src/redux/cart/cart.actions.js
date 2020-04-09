@@ -1,4 +1,4 @@
-import { TOGGLE_CART_HIDDEN, ADD_ITEM, REMOVE_ITEM, CLEAR_CART } from 'redux/types/cart.types';
+import { TOGGLE_CART_HIDDEN, ADD_ITEM, REMOVE_ITEM, CLEAR_CART } from 'redux/cart/cart.types';
 
 export const toggleCartHidden = () => ({
 	type : TOGGLE_CART_HIDDEN,

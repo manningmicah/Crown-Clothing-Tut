@@ -1,5 +1,5 @@
-import { TOGGLE_CART_HIDDEN, ADD_ITEM, REMOVE_ITEM, CLEAR_CART } from 'redux/types/cart.types';
-import { addItemToCart } from 'redux/utils/cart.utils';
+import { TOGGLE_CART_HIDDEN, ADD_ITEM, REMOVE_ITEM, CLEAR_CART } from 'redux/cart/cart.types';
+import { addItemToCart } from 'redux/cart/cart.utils';
 
 const initialState = { hidden: true, cartItems: [] };
 

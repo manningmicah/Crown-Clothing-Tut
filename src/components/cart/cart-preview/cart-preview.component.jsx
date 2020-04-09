@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import CustomButton from 'components/form/custom-button/custom-button.component';
 import CartItem from 'components/cart/cart-item/cart-item.component';
-import { selectCartItems } from 'redux/selectors/cart/cart.selector';
+import { selectCartItems } from 'redux/cart/cart.selector';
 
 import './cart-preview.styles.scss';
 

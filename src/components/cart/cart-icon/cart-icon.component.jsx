@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { toggleCartHidden } from 'redux/actions/cart.actions';
-import { selectCartItemsCount } from 'redux/selectors/cart/cart.selector';
+import { toggleCartHidden } from 'redux/cart/cart.actions';
+import { selectCartItemsCount } from 'redux/cart/cart.selector';
 
 import { ReactComponent as ShoppinIcon } from 'assets/shopping-bag.svg';
 
