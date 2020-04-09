@@ -1,18 +1,14 @@
-$MainBgColor: white;
-$MainColor: black;
-$VFOutline: #66afe9;
-
+@import 'assets/color-palette.scss';
 /*
 	Accessibility related classes
 */
 
 @mixin visualFocus {
 	&:focus,
-	&:hover,
-	&:active {
-		outline: 2px solid $VFOutline !important;
-		outline-offset: -2px !important;
-		border: 2px solid $MainBgColor !important;
+	&:hover {
+		outline: 1px solid $GoogleBlue !important;
+		outline-offset: -1px !important;
+		//border: 2px solid $MainBgColor !important;
 		box-shadow: inset 0 0 0 2px $MainBgColor !important;
 		opacity: 1;
 	}

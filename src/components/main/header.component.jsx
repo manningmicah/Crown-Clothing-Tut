@@ -12,22 +12,22 @@ import './header.styles.scss';
 
 const Header = ({ currentUser, hidden }) => (
 	<div className='header'>
-		<Link className='logo-container' to='/'>
+		<Link id='homeLink' className='logo-container' to='/'>
 			<Logo className='logo' />
 		</Link>
 		<nav className='options'>
-			<Link className='option' to='/shop'>
+			<Link id='shopLink' className='option' to='/shop'>
 				SHOP
 			</Link>
-			<Link className='option' to='/contact'>
+			<Link id='contactLink' className='option' to='/contact'>
 				CONTACT
 			</Link>
 			{currentUser ? (
-				<div className='option link' onClick={() => auth.signOut()} tabIndex='0'>
+				<div id='signOutLink' className='option link' onClick={() => auth.signOut()} tabIndex='0'>
 					SIGN OUT
 				</div>
 			) : (
-				<Link className='option' to='/signin'>
+				<Link id='signInLink' className='option' to='/signin'>
 					SIGN IN
 				</Link>
 			)}

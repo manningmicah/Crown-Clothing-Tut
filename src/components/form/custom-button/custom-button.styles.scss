@@ -1,3 +1,5 @@
+@import 'assets/color-palette.scss';
+
 .custom-button {
 	min-width: 120px;
 	width: auto;
@@ -6,8 +8,8 @@
 	line-height: 50px;
 	padding: 0 20px 0 20px;
 	font-size: 15px;
-	background-color: black;
-	color: white;
+	background-color: $MainColor;
+	color: $MainBgColor;
 	text-transform: uppercase;
 	font-family: 'Open Sans Condensed';
 	font-weight: bolder;
@@ -17,29 +19,29 @@
 	justify-content: center;
 
 	&:hover {
-		background-color: white;
-		color: black;
-		border: 1px solid black;
+		background-color: $MainBgColor;
+		color: $MainColor;
+		border: 1px solid $MainColor;
 	}
 
 	&.google-sign-in {
-		background-color: #4285f4;
-		color: white;
+		background-color: $GoogleBlue;
+		color: $MainBgColor;
 
 		&:hover {
-			background-color: #357ae8;
+			background-color: $GoogleBlueHov;
 			// border: none;
 		}
 	}
 
 	&.inverted {
-		background-color: white;
-		color: black;
-		border: 2px solid black;
+		background-color: $MainBgColor;
+		color: $MainColor;
+		border: 2px solid $MainColor;
 
 		&:hover {
-			background-color: black;
-			color: white;
+			background-color: $MainColor;
+			color: $MainBgColor;
 			border: none;
 		}
 	}
