@@ -11,28 +11,30 @@ const CheckoutPage = ({ cartItems, total }) => (
 	<div className='checkout-page'>
 		<h1>CHECK OUT</h1>
 		<table summary='This table lists the items currently in your cart.'>
-			<tr className='checkout-header'>
-				<th className='header-block' scope='col'>
-					Product
-				</th>
-				<th className='header-block' scope='col'>
-					Description
-				</th>
-				<th className='header-block' scope='col'>
-					Price
-				</th>
-				<th className='header-block' scope='col'>
-					Quantity
-				</th>
-				<th className='header-block' scope='col'>
-					Remove
-				</th>
-			</tr>
-			{cartItems.map((cartItem) => <CheckoutItem key={cartItem.id} cartItem={cartItem} />)}
-			<div className='total'>
-				<span>TOTAL: ${total}</span>
-			</div>
+			<thead>
+				<tr className='checkout-header'>
+					<th className='header-block' scope='col'>
+						Product
+					</th>
+					<th className='header-block' scope='col'>
+						Description
+					</th>
+					<th className='header-block' scope='col'>
+						Quantity
+					</th>
+					<th className='header-block' scope='col'>
+						Price
+					</th>
+					<th className='header-block' scope='col'>
+						Remove
+					</th>
+				</tr>
+			</thead>
+			<tbody>{cartItems.map((cartItem) => <CheckoutItem key={cartItem.id} cartItem={cartItem} />)}</tbody>
 		</table>
+		<div className='total'>
+			<span>TOTAL: ${total}</span>
+		</div>
 	</div>
 );
 

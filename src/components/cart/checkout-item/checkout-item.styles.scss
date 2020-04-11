@@ -9,7 +9,8 @@
 
 	.image-container {
 		width: 20%;
-		padding-right: 15px;
+		padding-right: 7px;
+		padding-left: 7px;
 
 		img {
 			width: 100%;
@@ -20,14 +21,26 @@
 	.quantity,
 	.price {
 		width: 20%;
+		text-align: center;
 	}
 
 	.quantity {
-		padding-left: 20px;
+		div {
+			margin: auto;
+			display: flex;
+		}
+
+		.arrow {
+			cursor: pointer;
+		}
+
+		.value {
+			margin: 0 10px;
+		}
 	}
 
-	.remove-button {
-		padding-left: 12px;
+	.remove {
+		margin: auto;
 		cursor: pointer;
 	}
 }
