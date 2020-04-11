@@ -7,6 +7,7 @@ import CustomButton from 'components/form/custom-button/custom-button.component'
 import CartItem from 'components/cart/cart-item/cart-item.component';
 import { selectCartItems } from 'redux/cart/cart.selector';
 import emptyCartImage from '../../../assets/emptycart.png';
+import { toggleCartHidden } from 'redux/cart/cart.actions';
 
 import './cart-preview.styles.scss';
 
@@ -18,7 +19,7 @@ const emptyItem = {
 	quantity : 0,
 };
 
-const CartPreview = ({ cartItems, history }) => (
+const CartPreview = ({ cartItems, history, dispatch }) => (
 	<div className='cart-preview'>
 		{cartItems.length ? (
 			<div className='cart-items'>{cartItems.map((cartItem) => <CartItem key={cartItem.id} item={cartItem} />)}</div>
@@ -27,7 +28,14 @@ const CartPreview = ({ cartItems, history }) => (
 				<CartItem key={emptyItem.id} item={emptyItem} />
 			</div>
 		)}
-		<CustomButton onClick={() => history.push('/checkout')}>GO TO CHECKOUT</CustomButton>
+		<CustomButton
+			onClick={() => {
+				history.push('/checkout');
+				dispatch(toggleCartHidden());
+			}}
+		>
+			GO TO CHECKOUT
+		</CustomButton>
 	</div>
 );
 
