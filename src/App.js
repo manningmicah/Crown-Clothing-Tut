@@ -11,7 +11,7 @@ import SignInAndRegPage from 'pages/Signin-and-Reg/Signin-and-Reg.page';
 import CheckoutPage from 'pages/checkout/checkout.page';
 import { auth, createUserProfileDocument } from 'data/firebase/firebase.utils';
 import { setCurrentUser } from 'redux/user/user.actions';
-import { selectCurrentUser } from 'redux/user/user.selector';
+import { selectCurrentUser } from 'redux/user/user.selectors';
 import { createStructuredSelector } from 'reselect';
 
 class App extends React.Component {

@@ -5,8 +5,8 @@ import { auth } from 'data/firebase/firebase.utils';
 
 import CartIcon from 'components/cart/cart-icon/cart-icon.component';
 import CartPreview from 'components/cart/cart-preview/cart-preview.component';
-import { selectCartHidden } from 'redux/cart/cart.selector';
-import { selectCurrentUser } from 'redux/user/user.selector';
+import { selectCartHidden } from 'redux/cart/cart.selectors';
+import { selectCurrentUser } from 'redux/user/user.selectors';
 
 import { ReactComponent as Logo } from 'assets/crownLogo.svg';
 
