@@ -7,7 +7,7 @@ import './collection-preview.styles.scss';
 
 const CollectionPreview = ({ title, items }) => (
 	<div className='collection-preview'>
-		<Link to={title.toLowerCase()}>
+		<Link to={`shop/${title.toLowerCase()}`}>
 			<h1 className='title'>
 				<span className='collection-ellipse' aria-hidden>
 					...{' '}
@@ -16,7 +16,7 @@ const CollectionPreview = ({ title, items }) => (
 			</h1>
 		</Link>
 		<div className='preview'>
-			{items.filter((item, idx) => idx < 4).map((item) => <CollectionItem key={item.id} item={item} />)}
+			{items.filter((_item, idx) => idx < 4).map((item) => <CollectionItem key={item.id} item={item} />)}
 		</div>
 	</div>
 );
