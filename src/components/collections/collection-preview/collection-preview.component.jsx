@@ -5,6 +5,8 @@ import CollectionItem from 'components/collections/collection-item/collection-it
 
 import './collection-preview.styles.scss';
 
+const numOfItems = 4;
+
 const CollectionPreview = ({ title, items }) => (
 	<div className='collection-preview'>
 		<Link to={`shop/${title.toLowerCase()}`}>
@@ -16,7 +18,7 @@ const CollectionPreview = ({ title, items }) => (
 			</h1>
 		</Link>
 		<div className='preview'>
-			{items.filter((_item, idx) => idx < 4).map((item) => <CollectionItem key={item.id} item={item} />)}
+			{items.filter((_item, idx) => idx < numOfItems).map((item) => <CollectionItem key={item.id} item={item} />)}
 		</div>
 	</div>
 );
