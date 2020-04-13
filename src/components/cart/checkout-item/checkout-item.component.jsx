@@ -27,7 +27,7 @@ const CheckoutItem = ({ cartItem, removeItemKind, addItem, removeItem }) => {
 			</td>
 			<td className='price'>{price}</td>
 			<td className='remove'>
-				<CustomButton inverted remove-btn onClick={() => removeItemKind(cartItem)}>
+				<CustomButton inverted removeBtn onClick={() => removeItemKind(cartItem)}>
 					&#10005;
 				</CustomButton>
 			</td>
