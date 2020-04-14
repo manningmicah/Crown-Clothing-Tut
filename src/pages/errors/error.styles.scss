@@ -1,0 +1,25 @@
+.error-page {
+	width: 50vw;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: auto;
+
+	.error-title {
+		font-size: 38px;
+		margin: 0 auto 50px;
+	}
+
+	.error-message {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		.error-detail {
+			font-size: 26px;
+		}
+	}
+	.error-link {
+		font-size: 30px;
+	}
+}
