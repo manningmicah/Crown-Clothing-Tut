@@ -13,32 +13,35 @@ import { ReactComponent as Logo } from 'assets/crownLogo.svg';
 import './header.styles.scss';
 import { createStructuredSelector } from 'reselect';
 
-const Header = ({ currentUser, hidden }) => (
-	<div className='header'>
-		<Link id='homeLink' className='logo-container' to='/'>
-			<Logo className='logo' />
-		</Link>
-		<nav className='options'>
-			<Link id='shopLink' className='option' to='/shop'>
-				SHOP
+const Header = ({ currentUser, hidden }) => {
+	return (
+		<div className='header'>
+			<Link id='homeLink' className='logo-container' to='/'>
+				<Logo className='logo' />
 			</Link>
-			<Link id='contactLink' className='option' to='/contact'>
-				CONTACT
-			</Link>
-			{currentUser ? (
-				<div id='signOutLink' className='option link' onClick={() => auth.signOut()} tabIndex='0'>
-					SIGN OUT
-				</div>
-			) : (
-				<Link id='signInLink' className='option' to='/signin'>
-					SIGN IN
+			<span className='welcomeMessage'>{`Welcome, ${currentUser.displayName.split(' ')[0]}`}</span>
+			<nav className='options'>
+				<Link id='shopLink' className='option' to='/shop'>
+					SHOP
 				</Link>
-			)}
-			<CartIcon />
-		</nav>
-		{hidden ? null : <CartPreview />}
-	</div>
-);
+				<Link id='contactLink' className='option' to='/contact'>
+					CONTACT
+				</Link>
+				{currentUser ? (
+					<div id='signOutLink' className='option link' onClick={() => auth.signOut()} tabIndex='0'>
+						SIGN OUT
+					</div>
+				) : (
+					<Link id='signInLink' className='option' to='/signin'>
+						SIGN IN
+					</Link>
+				)}
+				<CartIcon />
+			</nav>
+			{hidden ? null : <CartPreview />}
+		</div>
+	);
+};
 
 const mapStateToProps = createStructuredSelector({
 	currentUser : selectCurrentUser,

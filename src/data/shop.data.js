@@ -244,6 +244,19 @@ const SHOP_DATA = {
 			},
 		],
 	},
+	none     : {
+		id        : 404,
+		title     : 'No Collection found by that name.',
+		routeName : 'none',
+		items     : [
+			// {
+			// 	id       : 404,
+			// 	name     : 'No Items Found',
+			// 	imageUrl : 'none',
+			// 	price    : 0,
+			// },
+		],
+	},
 };
 
 export default SHOP_DATA;
