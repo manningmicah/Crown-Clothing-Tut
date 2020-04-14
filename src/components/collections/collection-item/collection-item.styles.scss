@@ -22,7 +22,8 @@
 		display: none;
 	}
 
-	&:hover {
+	&:hover,
+	&:focus {
 		.image {
 			opacity: 0.8;
 		}
@@ -30,6 +31,12 @@
 		.custom-button {
 			opacity: 0.8;
 			display: flex;
+
+			&:hover,
+			&:focus {
+				opacity: 0.8;
+				display: flex;
+			}
 		}
 	}
 

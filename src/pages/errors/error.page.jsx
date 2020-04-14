@@ -12,7 +12,7 @@ const ErrorPage = ({ type, timeStamp }) => {
 				<p className='error-detail'>Please, try back later, we seem to be experiencing issues.</p>
 				<p className='error-detail'>Error Code: {`${errorCode}`}</p>
 			</div>
-			<a className='error-link' href={mailTo}>
+			<a className='error-link' role='button' href={mailTo}>
 				Email us about it!
 			</a>
 		</div>
