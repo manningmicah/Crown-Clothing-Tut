@@ -9,7 +9,7 @@ import './collection-item.styles.scss';
 const CollectionItem = ({ item, addItem }) => {
 	const { id, name, price, imageUrl } = item;
 	return (
-		<div id={id} className='collection-item' role='button' tabindex='0' onClick={() => addItem(item)}>
+		<div id={id} className='collection-item force-vf' role='button' tabindex='0' onClick={() => addItem(item)}>
 			<div
 				className='image'
 				style={{
