@@ -9,7 +9,7 @@ import { selectCartItems } from 'redux/cart/cart.selectors';
 import emptyCartImage from '../../../assets/emptycart.png';
 import { toggleCartHidden } from 'redux/cart/cart.actions';
 
-import './cart-preview.styles.scss';
+import { CartPreviewContainer, EmptyMessage, CartItems, CheckoutButton } from './cart-preview.styled';
 
 const emptyItem = {
 	id       : 9999,
@@ -20,23 +20,23 @@ const emptyItem = {
 };
 
 const CartPreview = ({ cartItems, history, dispatch }) => (
-	<div className='cart-preview'>
+	<CartPreviewContainer>
 		{cartItems.length ? (
-			<div className='cart-items'>{cartItems.map((cartItem) => <CartItem key={cartItem.id} item={cartItem} />)}</div>
+			<CartItems>{cartItems.map((cartItem) => <CartItem key={cartItem.id} item={cartItem} />)}</CartItems>
 		) : (
-			<div className='empty-message'>
+			<EmptyMessage>
 				<CartItem key={emptyItem.id} item={emptyItem} />
-			</div>
+			</EmptyMessage>
 		)}
-		<CustomButton
+		<CheckoutButton
 			onClick={() => {
 				history.push('/checkout');
 				dispatch(toggleCartHidden());
 			}}
 		>
 			GO TO CHECKOUT
-		</CustomButton>
-	</div>
+		</CheckoutButton>
+	</CartPreviewContainer>
 );
 
 const mapStateToProps = createStructuredSelector({
