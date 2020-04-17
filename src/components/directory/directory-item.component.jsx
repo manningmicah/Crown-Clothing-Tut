@@ -1,25 +1,31 @@
 import React from 'react';
-import './directory-item.styles.scss';
 import { withRouter } from 'react-router-dom';
 
+import {
+	DirectoryItemContainer,
+	BackgroundImage,
+	ContentBlock,
+	ContentTitle,
+	ContentSubTitle,
+} from './directory-item.styled';
+
 const MenuItem = ({ title, imageUrl, size, history, linkUrl, match }) => (
-	<div
-		className={`${size} menu-item`}
+	<DirectoryItemContainer
+		className={size ? `${size}` : ''}
 		role='button'
 		tabindex='0'
-		onClick={() => history.push(`${match.url}shop/${linkUrl}`)}
-	>
-		<div
-			className='background-image'
+		onClick={() => history.push(`${match.url}shop/${linkUrl}`)}>
+		<BackgroundImage
+			className='imgTrans'
 			style={{
 				backgroundImage : `url(${imageUrl})`,
 			}}
 		/>
-		<div className='content'>
-			<h2 className='title'>{title.toUpperCase()}</h2>
-			<span className='subtitle'>SHOP NOW</span>
-		</div>
-	</div>
+		<ContentBlock className='contentOp'>
+			<ContentTitle>{title.toUpperCase()}</ContentTitle>
+			<ContentSubTitle>SHOP NOW</ContentSubTitle>
+		</ContentBlock>
+	</DirectoryItemContainer>
 );
 
 export default withRouter(MenuItem);

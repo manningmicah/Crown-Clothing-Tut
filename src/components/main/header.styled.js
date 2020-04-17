@@ -8,6 +8,7 @@ export const HeaderContainer = styled.div`
 	display: flex;
 	justify-content: space-between;
 	margin-bottom: 25px;
+	border-bottom: 3px solid black;
 `;
 
 export const LogoContainer = styled(Link)`
