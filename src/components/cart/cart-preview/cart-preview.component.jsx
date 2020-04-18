@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { withRouter } from 'react-router-dom';
 
-import CustomButton from 'components/form/custom-button/custom-button.component';
 import CartItem from 'components/cart/cart-item/cart-item.component';
 import { selectCartItems } from 'redux/cart/cart.selectors';
 import emptyCartImage from '../../../assets/emptycart.png';
@@ -32,8 +31,7 @@ const CartPreview = ({ cartItems, history, dispatch }) => (
 			onClick={() => {
 				history.push('/checkout');
 				dispatch(toggleCartHidden());
-			}}
-		>
+			}}>
 			GO TO CHECKOUT
 		</CheckoutButton>
 	</CartPreviewContainer>

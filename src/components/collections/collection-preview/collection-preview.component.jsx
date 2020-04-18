@@ -9,7 +9,7 @@ const numOfItems = 4;
 
 const CollectionPreview = ({ title, items }) => (
 	<PreviewContainer>
-		<Link Title={`Go to ${title.toUpperCase()} Collection`} to={`shop/${title.toLowerCase()}`}>
+		<Link title={`Go to ${title.toUpperCase()} Collection`} to={`shop/${title.toLowerCase()}`}>
 			<CollectionTitle>
 				<TitleEllipse aria-hidden>... </TitleEllipse>
 				{title.toUpperCase()}
