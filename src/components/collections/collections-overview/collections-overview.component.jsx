@@ -9,7 +9,7 @@ import { selectCollectionsAsArray } from 'redux/shop/shop.selectors';
 const CollectionsOverview = ({ collections }) => (
 	<OverviewContainer>
 		{collections
-			.filter((collections) => collections.id !== 404)
+			.filter((collections) => collections.items[0] !== '')
 			.map(({ id, ...otherCollectionProps }) => <CollectionPreview key={id} {...otherCollectionProps} />)}
 	</OverviewContainer>
 );

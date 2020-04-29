@@ -3,15 +3,17 @@ import 'firebase/firestore';
 import 'firebase/auth';
 
 const config = {
-	apiKey            : 'AIzaSyAoE6p4WCbPJdsY2umlGMIjjhFNPvUwkYo',
-	authDomain        : 'crown-db-e7c6c.firebaseapp.com',
-	databaseURL       : 'https://crown-db-e7c6c.firebaseio.com',
-	projectId         : 'crown-db-e7c6c',
-	storageBucket     : 'crown-db-e7c6c.appspot.com',
-	messagingSenderId : '689856677448',
-	appId             : '1:689856677448:web:2b23c1e19c6697da7d7a7d',
-	measurementId     : 'G-L3EWK7528L',
+	apiKey            : process.env.REACT_APP_FIREBASE_API_KEY,
+	authDomain        : process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+	databaseURL       : process.env.REACT_APP_FIREBASE_DATABASE_URL,
+	projectId         : process.env.REACT_APP_FIREBASE_PROJECT_ID,
+	storageBucket     : process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+	messagingSenderId : process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+	appId             : process.env.REACT_APP_FIREBASE_APP_ID,
+	measurementId     : process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
 };
+
+//TODO: check on env variables for heroku after next deployment
 
 firebase.initializeApp(config);
 
@@ -38,6 +40,35 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 	}
 
 	return userRef;
+};
+
+export const addCollectionAndDocs = async (collectionKey, objects) => {
+	const collectionRef = firestore.collection(collectionKey);
+	const batch = firestore.batch();
+
+	objects.forEach((obj) => {
+		const newDocRef = collectionRef.doc();
+		batch.set(newDocRef, obj);
+	});
+
+	return await batch.commit();
+};
+
+export const collectionSnapshotToMap = (collectionsSnapshot) => {
+	const transformedCollection = collectionsSnapshot.docs.map((doc) => {
+		const { title, items } = doc.data();
+
+		return {
+			routeName : !doc.routeName ? encodeURI(title.toLowerCase()) : doc.routeName,
+			id        : doc.id,
+			title,
+			items,
+		};
+	});
+	return transformedCollection.reduce((accum, collection) => {
+		accum[collection.title.toLowerCase()] = collection;
+		return accum;
+	}, {});
 };
 
 export const auth = firebase.auth();

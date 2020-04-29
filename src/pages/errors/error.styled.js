@@ -14,7 +14,7 @@ export const ErrorTitle = styled.h1`
 	margin: 0 auto 50px;
 `;
 
-export const ErrorMessage = styled.p`
+export const ErrorMessage = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
