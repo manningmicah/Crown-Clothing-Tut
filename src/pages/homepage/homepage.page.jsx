@@ -4,7 +4,7 @@ import { HomePageContainer } from './homepage.styled';
 
 const HomePage = () => (
 	<div>
-		<h1>CROWN TRADEGOODS</h1>
+		<h1>CROWN TRADEGOODS PROJECT</h1>
 		<HomePageContainer>
 			<Directory />
 		</HomePageContainer>

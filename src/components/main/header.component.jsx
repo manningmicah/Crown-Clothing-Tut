@@ -24,6 +24,9 @@ const Header = ({ currentUser, hidden }) => (
 			<OptionLink id='contactLink' to='/contact'>
 				CONTACT
 			</OptionLink>
+			<OptionLink id='aboutLink' to='/about'>
+				ABOUT
+			</OptionLink>
 			{currentUser ? (
 				<OptionLink as='div' id='signOutLink' className='force-vf' onClick={() => auth.signOut()} tabIndex='0'>
 					SIGN OUT

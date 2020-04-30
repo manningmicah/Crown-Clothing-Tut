@@ -9,6 +9,7 @@ import ShopPage from 'pages/shop/shop.page';
 import Header from 'components/main/header.component';
 import SignInAndRegPage from 'pages/Signin-and-Reg/Signin-and-Reg.page';
 import CheckoutPage from 'pages/checkout/checkout.page';
+import About from 'pages/about/about.page';
 import ErrorPage from 'pages/errors/error.page';
 import { auth, createUserProfileDocument } from 'data/firebase/firebase.utils';
 import { setCurrentUser } from 'redux/user/user.actions';
@@ -53,6 +54,7 @@ class App extends React.Component {
 						path='/signin'
 						render={() => (this.props.currentUser ? <Redirect to='/' /> : <SignInAndRegPage />)}
 					/>
+					<Route exact path='/about' component={About} />
 					<Route exact path='/checkout' component={CheckoutPage} />
 					<Route render={() => <ErrorPage type='404 - Page not Found' timeStamp={createdAt} />} />
 				</Switch>
