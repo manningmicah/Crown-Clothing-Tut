@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const card = css`
 	background-color: #eee;
@@ -53,4 +54,10 @@ export const ItemValue = styled.div`text-align: right;`;
 export const DetailBlock = styled.p`
 	padding: 10px;
 	margin: 0;
+`;
+
+export const Linked = styled(Link)`
+	margin: 10px 0;
+	text-align: right; 
+	align-self: right;
 `;

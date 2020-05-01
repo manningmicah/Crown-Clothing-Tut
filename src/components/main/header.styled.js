@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-import 'assets/color-palette.scss';
+import { NavLink } from 'react-router-dom';
+import mainTheme from 'assets/color-palettes.js';
 
 export const HeaderContainer = styled.div`
 	height: 70px;
@@ -11,7 +11,7 @@ export const HeaderContainer = styled.div`
 	border-bottom: 3px solid black;
 `;
 
-export const LogoContainer = styled(Link)`
+export const LogoContainer = styled(NavLink)`
 	height: 100%;
 	width: 85px;
 	padding: 15px;
@@ -25,13 +25,13 @@ export const OptionsContainer = styled.nav`
 	justify-content: flex-end;
 `;
 
-export const OptionLink = styled(Link)`
+export const OptionLink = styled(NavLink)`
 	padding: 10px 15px;
 	cursor: pointer;
 	text-align: center;
 
-	&:active {
-		color: $MainBgColor;
-		background: $MainColor;
+	&:active, &:hover, &:focus {
+		color: ${mainTheme.MainBgColor};
+		background: ${mainTheme.MainColor};
 	}
 `;

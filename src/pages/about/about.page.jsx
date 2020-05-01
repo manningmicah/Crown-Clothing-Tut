@@ -12,6 +12,7 @@ import {
 	ItemValue,
 	DetailBlock,
 	Blurb,
+	Linked,
 } from './about.styled';
 
 const About = () => (
@@ -42,10 +43,16 @@ const About = () => (
 					in said contract. Knowing the intricacies of this technology stack lead me to being better at supporting those
 					projects with my <abbr title='Section 508'>508</abbr> knowledge.
 				</DetailBlock>
+				<ItemName>Udemy Project Page</ItemName>
+				<Linked to='https://www.udemy.com/course/complete-react-developer-zero-to-mastery/'>
+					udemy.com/course/complete-react-developer-zero-to-mastery/
+				</Linked>
 			</AboutDev>
 			<AboutProject>
 				<SectionTitle>About the App:</SectionTitle>
 				<PackageInfo />
+				<ItemName>Docs Page Link</ItemName>
+				<Linked to='https://xinous.github.io/Crown-Clothing-Tut/'>xinous.github.io/Crown-Clothing-Tut/</Linked>
 			</AboutProject>
 		</CardContainer>
 	</AboutContainer>
