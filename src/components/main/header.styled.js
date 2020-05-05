@@ -30,8 +30,14 @@ export const OptionLink = styled(NavLink)`
 	cursor: pointer;
 	text-align: center;
 
+	&.active {
+		background: lightgrey
+	}
+	
 	&:active, &:hover, &:focus {
 		color: ${mainTheme.MainBgColor};
 		background: ${mainTheme.MainColor};
 	}
+
+
 `;
